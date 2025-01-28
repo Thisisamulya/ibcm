@@ -1,0 +1,60 @@
+.alertCard {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #ffffff;
+    border-left: 6px solid;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+  }
+  
+  .alertCard:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .alertCardResolved {
+    padding: 1rem;
+    margin: 1rem 0;
+    background-color: #e0f7fa;
+    border-left: 6px solid #26a69a;
+    border-radius: 8px;
+  }
+  
+  .filterContainer {
+    display: flex;
+    justify-content: flex-start;
+    gap: 1rem;
+    margin-bottom: 1rem;
+  }
+  
+  .clickableAlert {
+    cursor: pointer;
+    color: #1a73e8;
+    text-decoration: underline;
+    transition: color 0.2s ease;
+  }
+  
+  .clickableAlert:hover {
+    color: #ff5722;
+  }
+  
+  .modalBox {
+    position: 'absolute';
+    top: '50%';
+    left: '50%';
+    transform: 'translate(-50%, -50%)';
+    width: 400px;
+    background-color: 'white';
+    padding: '2rem';
+    border-radius: '8px';
+    box-shadow: '0px 4px 10px rgba(0, 0, 0, 0.2)';
+  }
+  
+  .button {
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  

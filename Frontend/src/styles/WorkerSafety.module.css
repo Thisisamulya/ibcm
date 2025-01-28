@@ -1,0 +1,127 @@
+/* ImageUpload.module.css */
+
+/* Container for the whole page */
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* Main card */
+.card {
+  background-color: #fff;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 800px;
+  width: 100%;
+  margin: 0 auto;
+  flex-grow: 1; /* Ensures the card grows to take available space */
+}
+
+.title {
+  color: #2c3e50;
+  margin-bottom: 20px;
+  font-size: 2.5rem;
+}
+
+.subtitle {
+  color: #7f8c8d;
+  margin-bottom: 30px;
+  font-size: 1.2rem;
+}
+
+.form {
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.fileInput {
+  display: inline-block;
+  padding: 12px 20px;
+  cursor: pointer;
+  background-color: #3498db;
+  color: white;
+  font-weight: bold;
+  border-radius: 6px;
+  margin-bottom: 15px;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.fileInput input[type="file"] {
+  display: none;
+}
+
+.uploadButton {
+  padding: 12px 24px;
+  background-color: #2ecc71;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 1rem;
+}
+
+.uploadButton:hover {
+  background-color: #27ae60;
+}
+
+.imageName {
+  margin-top: 10px;
+  color: #34495e;
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+/* Container for images */
+.imagesContainer {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.imageBox {
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+.imageTitle {
+  font-size: 1.5rem;
+  color: #34495e;
+  margin-bottom: 10px;
+}
+
+.image {
+  width: auto;
+  max-width: 100%; /* Adjust the image size dynamically */
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  margin-top: 10px;
+}
+
+/* Footer styling */
+.footer {
+  background-color: #2c3e50;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+
+
+
+@media (max-width: 768px) {
+  .imagesContainer {
+      flex-direction: column;
+  }
+}

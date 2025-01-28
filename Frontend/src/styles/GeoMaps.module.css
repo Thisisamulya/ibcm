@@ -1,0 +1,102 @@
+.container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f4f4f4;
+}
+
+.mapContainer {
+  flex: 3;
+  padding: 20px;
+  background-color: #ffffff;
+}
+
+.sidebar {
+  flex: 1;
+  padding: 20px;
+  background-color: #ffffff;
+  border-right: 1px solid #ddd;
+}
+
+.profile {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  border-bottom: 2px solid #3f51b5;
+  padding-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.profile img {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.profile .info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.profile .info h2 {
+  margin: 0;
+  font-size: 1.5rem;
+  color: #3f51b5;
+}
+
+.profile .info p {
+  margin: 5px 0;
+  color: #555;
+}
+
+.projectList {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.projectList h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  color: #3f51b5;
+  border-bottom: 2px solid #3f51b5;
+  padding-bottom: 5px;
+}
+
+.projectList ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.projectList li {
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 10px;
+}
+
+.projectList .status {
+  font-weight: bold;
+  color: #3f51b5;
+}
+
+.progressContainer {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.progressBar {
+  width: 100%;
+  background-color: #e0e0e0;
+  height: 10px;
+  border-radius: 5px;
+}
+
+.progressBar > div {
+  height: 100%;
+  background-color: #3f51b5;
+  border-radius: 5px;
+}

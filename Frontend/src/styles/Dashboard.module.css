@@ -1,0 +1,60 @@
+/* Dashboard.module.css */
+
+/* Profile Card Styles */
+.profileCard {
+    background-color: #f5f5f5;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .profileCard .MuiGrid-root {
+    padding: 1rem;
+  }
+  
+  .profileCard h6 {
+    font-size: 1.5rem;
+    font-weight: 600;
+  }
+  
+  /* Tabs Container Styles */
+  .tabsContainer {
+    margin-top: 1rem;
+  }
+  
+  /* Section Containers */
+  .pieContainer,
+  .barContainer,
+  .lineContainer {
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+  }
+  
+  .tableContainer {
+    margin-top: 2rem;
+    background-color: #ffffff;
+    padding: 1rem;
+    border-radius: 12px;
+  }
+  
+  /* Accordion Styles */
+  .accordionContainer {
+    padding: 1rem;
+    background-color: #ffffff;
+    border-radius: 12px;
+  }
+  
+  .accordionContainer .MuiAccordion-root {
+    margin-bottom: 1rem;
+  }
+  
+  /* Button Styles */
+  .button {
+    transition: background-color 0.3s ease;
+  }
+  
+  .button:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+  }
+  

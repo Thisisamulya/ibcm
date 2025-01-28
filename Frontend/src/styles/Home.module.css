@@ -1,0 +1,153 @@
+/* Home Page Styles */
+.main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+/* Banner Section */
+.banner {
+  height: 80vh;
+  background-image: url('/icons/banner.jpg'); /* Add your banner image to the public folder */
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative; /* For adding overlay */
+}
+
+.banner::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay for better text visibility */
+  border-radius: 10px;
+}
+
+.bannerContent {
+  color: white;
+  text-align: center;
+  backdrop-filter: blur(6px);
+  padding: 2rem;
+  border-radius: 10px;
+  position: relative; /* To place it above the overlay */
+  z-index: 1; /* Ensures it sits above the overlay */
+}
+
+.bannerContent h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1.5px; /* Add some spacing for a more refined look */
+}
+
+.bannerContent p {
+  font-size: 1.5rem;
+  font-weight: 300;
+  margin-bottom: 1.5rem; /* Added margin for spacing */
+}
+
+.bannerContent .MuiButton-root {
+  margin-top: 1rem;
+  font-weight: bold;
+  padding: 0.75rem 1.5rem; /* More padding for better clickability */
+  border-radius: 5px; /* Slightly rounded corners */
+  transition: background-color 0.3s ease; /* Smooth background change on hover */
+}
+
+.bannerContent .MuiButton-root:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Lighten on hover */
+}
+
+/* Features Section */
+.featuresSection {
+  padding: 4rem 2rem;
+  background-color: #f5f5f5;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.featuresSection h2 {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  color: #1a73e8; /* Changed heading color for vibrancy */
+}
+
+.featureCard {
+  width: 350px; /* Increased width */
+  height: 250px; /* Reduced height */
+  padding: 2rem;
+  text-align: center;
+  border-radius: 16px; /* More rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  margin: 1rem;
+  background: white; /* Solid background for contrast */
+  position: relative;
+  overflow: hidden; /* Clip child elements */
+  border: 1px solid #e0e0e0; /* Light border for definition */
+}
+
+.featureCard::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(26, 115, 232, 0.1); /* Light blue overlay */
+  border-radius: 16px; /* Match card corners */
+  z-index: 0; /* Place behind content */
+  transition: opacity 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.featureCard:hover::before {
+  opacity: 1; /* Show overlay on hover */
+}
+
+.featureCard:hover {
+  transform: translateY(-5px); /* Lift effect on hover */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2);
+}
+
+.featureCard h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: #333; /* Darker text color for contrast */
+  font-size: 1.5rem; /* Slightly larger font for titles */
+}
+
+.featureCard p {
+  color: #666; /* Lighter color for text */
+  line-height: 1.6; /* Better line spacing */
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .bannerContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .bannerContent p {
+    font-size: 1.2rem;
+  }
+
+  .featuresSection h2 {
+    font-size: 2rem;
+  }
+
+  .featureCard {
+    padding: 1.5rem;
+    width: 90%; /* Adjust width on smaller screens */
+    height: auto; /* Allow height to adjust based on content */
+  }
+}

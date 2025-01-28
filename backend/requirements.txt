@@ -1,0 +1,4 @@
+flask
+ultralytics
+scikit-image
+flask_cors
