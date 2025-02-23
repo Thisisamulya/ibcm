@@ -45,7 +45,7 @@ def analyze_images(previous_image_path, current_image_path, category):
     return {
         "category": category,
         "similarity_score": f"{similarity_score:.2f}",
-        "work_done_percentage": f"{percentage_difference:.2f}%",
+        "work_done_percentage": f"{100 - percentage_difference:.2f}%",
         "status": "success",
         "message": f"Analysis complete for {category}."
     }

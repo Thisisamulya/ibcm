@@ -21,6 +21,7 @@ def allowed_file(filename):
 
 # Generic route to handle image uploads for analysis
 def process_images_for_category(category):
+
     if 'previous_image' not in request.files or 'current_image' not in request.files:
         return jsonify({"error": "Please provide both previous and current images"}), 400
 
