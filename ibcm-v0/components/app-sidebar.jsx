@@ -7,6 +7,8 @@ import {
   Command,
   Frame,
   LifeBuoy,
+  AudioWaveform,
+  GalleryVerticalEnd,
   Map,
   PieChart,
   Send,
@@ -18,17 +20,18 @@ import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
-  SidebarRail,
+  // SidebarRail,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuButton,
 } from "@/components/ui/sidebar"
-import { TeamSwitcher } from "@/components/team-switcher"
+import { ThemeToggle } from "@/components/theme-toggle"
 
 // This is sample data.
 const data = {
@@ -40,12 +43,12 @@ const data = {
   teams: [
     {
       name: "Acme Inc",
-      logo: Command,
+      logo: GalleryVerticalEnd,
       plan: "Enterprise",
     },
     {
       name: "Acme Corp.",
-      logo: Command,
+      logo: AudioWaveform,
       plan: "Startup",
     },
     {
@@ -176,8 +179,8 @@ export function AppSidebar({
   ...props
 }) {
   return (
-    <Sidebar variant="icon" {...props}>
-      {/* <SidebarHeader>
+    (<Sidebar collapsible="icon" {...props}>
+      <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton size="lg" className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground" asChild>
@@ -193,10 +196,10 @@ export function AppSidebar({
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
-      </SidebarHeader> */}
-      <SidebarHeader>
-        <TeamSwitcher teams={data.teams} />
       </SidebarHeader>
+      {/* <SidebarHeader>
+        <TeamSwitcher teams={data.teams} />
+      </SidebarHeader> */}
       <SidebarContent>
         <ScrollArea className="flex flex-col gap-4">
           <NavProjects projects={data.projects} />
@@ -207,7 +210,7 @@ export function AppSidebar({
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
-      <SidebarRail />
-    </Sidebar>
+      {/* <SidebarRail /> */}
+    </Sidebar>)
   );
 }
