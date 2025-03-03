@@ -7,6 +7,8 @@ import {
   Command,
   Frame,
   LifeBuoy,
+  AudioWaveform,
+  GalleryVerticalEnd,
   Map,
   PieChart,
   Send,
@@ -14,27 +16,47 @@ import {
   SquareTerminal,
 } from "lucide-react"
 import { ScrollArea } from "@/components/ui/scroll-area"
-
 import { NavMain } from "@/components/nav-main"
 import { NavProjects } from "@/components/nav-projects"
 import { NavSecondary } from "@/components/nav-secondary"
 import { NavUser } from "@/components/nav-user"
+import { TeamSwitcher } from "@/components/team-switcher"
 import {
   Sidebar,
   SidebarContent,
   SidebarFooter,
   SidebarHeader,
+  // SidebarRail,
   SidebarMenu,
-  SidebarMenuButton,
   SidebarMenuItem,
+  SidebarMenuButton,
 } from "@/components/ui/sidebar"
+import { ThemeToggle } from "@/components/theme-toggle"
 
+// This is sample data.
 const data = {
   user: {
     name: "shadcn",
     email: "m@example.com",
     avatar: "/avatars/shadcn.jpg",
   },
+  teams: [
+    {
+      name: "Acme Inc",
+      logo: GalleryVerticalEnd,
+      plan: "Enterprise",
+    },
+    {
+      name: "Acme Corp.",
+      logo: AudioWaveform,
+      plan: "Startup",
+    },
+    {
+      name: "Evil Corp.",
+      logo: Command,
+      plan: "Free",
+    },
+  ],
   navMain: [
     {
       title: "Playground",
@@ -157,14 +179,13 @@ export function AppSidebar({
   ...props
 }) {
   return (
-    (<Sidebar variant="collapsible" {...props}>
+    (<Sidebar collapsible="icon" {...props}>
       <SidebarHeader>
         <SidebarMenu>
           <SidebarMenuItem>
-            <SidebarMenuButton size="lg" asChild>
+            <SidebarMenuButton size="lg" className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground" asChild>
               <a href="#">
-                <div
-                  className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+                <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
                   <Command className="size-4" />
                 </div>
                 <div className="grid flex-1 text-left text-sm leading-tight">
@@ -176,16 +197,20 @@ export function AppSidebar({
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
+      {/* <SidebarHeader>
+        <TeamSwitcher teams={data.teams} />
+      </SidebarHeader> */}
       <SidebarContent>
         <ScrollArea className="flex flex-col gap-4">
-          <NavMain items={data.navMain} />
           <NavProjects projects={data.projects} />
+          <NavMain items={data.navMain} />
         </ScrollArea>
         <NavSecondary items={data.navSecondary} className="mt-auto" />
       </SidebarContent>
       <SidebarFooter>
         <NavUser user={data.user} />
       </SidebarFooter>
+      {/* <SidebarRail /> */}
     </Sidebar>)
   );
 }
