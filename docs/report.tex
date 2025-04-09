@@ -1,0 +1,77 @@
+\documentclass[12pt,a4paper]{report}
+
+%==============================================================================
+% DOCUMENT STRUCTURE & ORGANIZATION
+%==============================================================================
+% This template is organized into three main logical sections:
+% 
+% 1. DOCUMENT VARIABLES
+%    - Edit the variables.tex file first to customize your document
+%    - All document-specific information is centralized here
+%
+% 2. PRELIMINARY PAGES (frontmatter)
+%    - Title page, certificate, declaration, acknowledgment, abstract
+%    - Table of contents and other lists
+%
+% 3. MAIN CONTENT
+%    - Introduction, methodology, results, conclusion
+%    - Bibliography and appendices
+%
+% USAGE INSTRUCTIONS:
+% - Every figure and table MUST be referenced in the text before it appears
+% - Run LaTeX at least twice to ensure all references are properly linked
+%==============================================================================
+
+% === Package imports and configuration ===
+\input{config/packages.tex}           % All package imports
+
+% === Student list management (must come before variables) ===
+\input{config/student-mgmt.tex}       % Student list management
+
+% === SECTION 1: DOCUMENT VARIABLES (edit this first) ===
+\input{content/variables.tex}         % Document variables
+
+% === Configuration settings ===
+\input{config/settings.tex}           % Configuration settings
+\input{config/layout.tex}             % Header and footer settings
+\input{config/environments.tex}       % Custom environments
+
+%==============================================================================
+% DOCUMENT CONTENT
+%==============================================================================
+\begin{document}
+
+%------------------------------------------------------------------------------
+% SECTION 2: PRELIMINARY PAGES (frontmatter)
+%------------------------------------------------------------------------------
+% Title page
+\input{frontmatter/titlepage.tex}
+
+% Certificate and formal pages
+\input{frontmatter/certificate.tex}   
+
+% Front matter setup (sets Roman numerals, margins, etc.)
+\input{config/frontmatter-setup.tex}
+
+% --- Preliminary pages/ Front matter ---
+\input{frontmatter/acknowledgment.tex}
+\input{frontmatter/declaration.tex}
+\input{frontmatter/abstract.tex}
+
+% Tables of contents and lists
+\input{frontmatter/toc.tex}
+
+%------------------------------------------------------------------------------
+% SECTION 3: MAIN CONTENT
+%------------------------------------------------------------------------------
+% The main content of your document
+\begin{spacing}{1.5}
+    
+    \input{content/main-content.tex}
+    
+\end{spacing}
+% Bibliography and appendices
+\input{backmatter/bibliography.tex}
+\input{backmatter/appendices.tex}
+
+\end{document}

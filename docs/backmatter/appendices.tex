@@ -1,0 +1,38 @@
+%==============================================================================
+% APPENDICES
+%==============================================================================
+% Appendices contain supplementary material that would disrupt the main text
+% Examples include: detailed proofs, extensive data tables, source code, etc.
+\appendix  % This command marks the beginning of appendices
+\chapter{Appendix Title}  % Appendices are numbered as A, B, C, etc.
+% Replace with appendix content
+This section contains supplementary material that would disrupt the flow of the main text but is still relevant to the research.
+
+% --- Tutorial for Using Abbreviations ---
+% \chapter{Using Abbreviations in LaTeX}
+% \label{chap:abbreviation-tutorial}
+% To define abbreviations, use the \texttt{\string\newacronym} command in the preamble:
+% \begin{verbatim}
+% \newacronym{ai}{AI}{Artificial Intelligence}
+% \end{verbatim}
+
+% To reference an abbreviation in the text, use the \texttt{\string\gls} command:
+% \begin{verbatim}
+% Artificial Intelligence (\gls{ai})
+% \end{verbatim}
+
+% The first occurrence will display the full form, while subsequent occurrences will show only the abbreviation.
+
+%==============================================================================
+% DOCUMENT MANAGEMENT TIPS
+%==============================================================================
+% - Use \label{} and \ref{} for cross-referencing sections, figures, and tables
+% - ALWAYS reference every figure and table in the text before it appears
+% - Keep your images in the 'images/' directory and reference them with \includegraphics
+% - Run LaTeX twice to ensure all references and citations are properly linked
+% - Use the hyperref package (already included) for clickable links in PDF output
+% - For large documents, consider using \include{filename} to split content into multiple files
+% - Use consistent formatting throughout your document
+% - Proofread carefully for spelling and grammatical errors
+% - Check all equations for mathematical correctness
+% - Ensure all citations in the text have corresponding entries in the bibliography

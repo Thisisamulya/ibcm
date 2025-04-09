@@ -1,0 +1,47 @@
+%==============================================================================
+% HEADER AND FOOTER SETUP
+%==============================================================================
+% This section controls the appearance of the page headers and footers
+% The fancy page style is used for most pages in the document
+
+% Adjusting page dimensions and header/footer spacing
+\setlength{\headheight}{17.49998pt}
+\addtolength{\headsep}{-5pt}
+\addtolength{\footskip}{5.49998pt}
+
+% Define a custom command for header and footer settings
+\newcommand{\customHeaderFooter}{
+    % Header content
+    \fancyhead[R]{\fontsize{9}{\baselineskip}\selectfont \textbf{\headerTitle}}
+
+    % Footer content
+    \fancyfoot[L]{\color{black}\fontsize{9}{\baselineskip}\selectfont \reportName}
+    \fancyfoot[C]{\color{black}\fontsize{9}{\baselineskip}\textbf{\selectfont{\deptNameShort, \collegeShort}}}
+    \fancyfoot[R]{\color{black}\thepage}
+
+    % Header rule styling
+    \renewcommand{\headrule}{
+        \vspace{-0.5pt}
+        {\color{brown}\hrule height 2pt width \headwidth}
+        \vspace{1pt}
+        {\color{brown}\hrule height 0.5pt width \headwidth}
+    }
+
+    % Footer rule styling
+    \renewcommand{\footrule}{
+        {\color{brown}\hrule height 0.5pt width \headwidth}
+        \vspace{1pt}
+        {\color{brown}\hrule height 2pt width \headwidth}
+        \vspace{-0.5pt}
+    }
+}
+
+% Apply the custom header and footer settings to the main fancy style
+\fancyhf{}          % Clear header and footer fields
+\customHeaderFooter
+
+% Apply the custom header and footer settings to the plain style
+\fancypagestyle{plain}{
+    \fancyhf{}
+    \customHeaderFooter
+}

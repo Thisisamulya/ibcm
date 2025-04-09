@@ -1,0 +1,33 @@
+% --- Bibliography ---
+% Add References to TOC after the chapters
+\phantomsection
+\addcontentsline{toc}{chapter}{References}
+
+% Specify the bibliography style and data file
+% \bibliographystyle{plain}
+% \bibliography{references.bib} % Replace 'references' with the name of your .bib file
+% Change the default bibliography title to "References"
+\renewcommand{\bibname}{References} % For book class
+% \renewcommand{\refname}{References} % For article classs
+% \renewcommand{\bibsection}{\section*{\bibname}}
+\begin{thebibliography}{99}
+    % Sample bibliography entries - REPLACE WITH YOUR REFERENCES
+    % Format for journal articles:
+    \bibitem{Sample2023}
+    Author, A., \& Co-Author, B. (2023). 
+    \textit{Title of the article or paper}. 
+    Journal Name, Volume(Issue), Page range. 
+    \href{https://doi.org/10.1000/sample}{https://doi.org/10.1000/sample}
+    
+    % Format for books:
+    \bibitem{Book2022}
+    Author, C. (2022). 
+    \textit{Title of the Book}. 
+    Publisher Name.
+    
+    % Format for websites:
+    \bibitem{Website2023}
+    Organization Name. (2023). 
+    \textit{Title of the webpage}. 
+    Retrieved Month Day, Year, from \url{https://www.example.com/page}
+\end{thebibliography}

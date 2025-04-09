@@ -1,0 +1,87 @@
+%==============================================================================
+% STUDENT LIST MANAGEMENT
+%==============================================================================
+% This section provides commands for managing multiple students in group projects
+% USAGE:
+% 1. Add students using \addstudent{Student Name}{Roll Number} in the preamble
+% 2. Use the various rendering commands in your document where needed
+%
+% Example usage:
+%   \addstudent{John Doe}{CS21001}
+%   \addstudent{Jane Smith}{CS21002}
+%
+% Then use in your document:
+%   This project was completed by \studentgrammar.
+%   OR
+%   \begin{tabular}{|l|l|}\hline
+%   Name & Roll Number \\\hline
+%   \studenttable\hline
+%   \end{tabular}
+%   OR
+%   \studentsignature
+%
+% CUSTOMIZATION:
+% - Change text colors by modifying the \textcolor{red} and \textcolor{blue} values
+% - Adjust spacing in \studentsignature with the \\[.8cm] value
+% - Modify the formatting of names and roll numbers in each command as needed
+
+\newcounter{studentcount}
+\setcounter{studentcount}{-1}
+\newcommand{\studentlist}{}        % Comma-separated list of student names
+\newcommand{\studenttable}{}       % Table rows with names and roll numbers
+\newcommand{\studentRolllist}{}    % List with names and roll numbers in parentheses
+
+% Main command to add a student to all lists
+% Parameters: #1=Student Name, #2=Roll Number
+\newcommand{\addstudent}[2]{%
+    \addtostudentlist{#1}{#2}
+    \addtostudenttable{#1}{#2}
+    \addtostudentrolllist{#1}{#2}
+    \stepcounter{studentcount}
+}
+
+\newcommand{\addtostudentlist}[2]{%
+    \ifnum\value{studentcount}=-1
+        \expandafter\def\expandafter\studentlist\expandafter{\studentlist \textcolor{red}{#1}}%
+    \else
+        \expandafter\def\expandafter\studentlist\expandafter{\studentlist, \textcolor{red}{#1}}%
+    \fi
+}
+
+\newcommand{\addtostudenttable}[2]{
+    \expandafter\gdef\expandafter\studenttable\expandafter{\studenttable \textcolor{blue}{\texttt{#1}} & \textcolor{blue}{\texttt{#2}}\\}
+}
+
+\newcommand{\addtostudentrolllist}[2]{
+    \ifnum\value{studentcount}=-1
+        \expandafter\gdef\expandafter\studentRolllist\expandafter{\studentRolllist {\textcolor{red}{#1}\- (\textcolor{red}{#2})}}
+    \else
+        \expandafter\gdef\expandafter\studentRolllist\expandafter{\studentRolllist, {\textcolor{red}{#1}\- (\textcolor{red}{#2})}}
+    \fi
+}
+
+% Creates a grammatically correct list with "and" before the last item
+\newcommand{\studentgrammar}{%
+    \foreach \n [count=\ni from 1] in \studentRolllist{%
+    \n%
+    \ifnum\ni=\value{studentcount} {and} \else\ifnum\ni<\value{studentcount}, \fi\fi%
+    }%
+}
+
+% Creates a formatted signature block for all students
+% Places two students per row by default
+\newcommand{\studentsignature}{%
+    % \vspace{0.2cm}  % Adjusts space between the signature block and the previous content
+    \begin{center}
+        % \par
+        % \noindent\textbf{Signature}  % Uncomment to add "Signature" header
+        % \par
+        % \vspace{1cm}                 % Uncomment to add space after header
+        \foreach \n [count=\ni from 1] in \studentlist{
+            % Adds 2 students signature prompts in a row
+            \ni. \n\ifodd\ni \hfil \else \\[.5cm] \fi 
+        }%
+    \end{center}
+    \vfill
+    \vspace{-0.5cm}  % Adjusts space between signatures and the next content
+}

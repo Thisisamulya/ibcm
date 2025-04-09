@@ -1,0 +1,71 @@
+%==============================================================================
+% PACKAGE IMPORTS
+%==============================================================================
+
+% === Document Structure and Layout ===
+\usepackage[utf8]{inputenc}           % For UTF-8 encoding
+\usepackage{geometry}                 % For adjusting page layout and margins
+\usepackage{fancyhdr}                 % For customizing page headers and footers
+\usepackage{layout}                   % Use `\layout` to visualize the layout
+\usepackage{titlesec}                 % For customizing section titles
+\usepackage{float}                    % Positioning floating elements
+\usepackage{tocloft}                  % For customizing the Table of Contents
+\usepackage{setspace}                 % For line spacing
+\usepackage{framed}                   % For framed environment
+
+% === Mathematics, Symbols and Technical Content ===
+\usepackage{amsmath}                  % Enhanced math typesetting
+\usepackage{amssymb}                  % Additional math symbols
+\usepackage{tikz-cd}                  % For commutative diagrams
+
+% === Graphics, Figures and Diagrams ===
+\usepackage{graphicx}                 % For graphics/images
+\usepackage{tikz}                     % For vector graphics
+\usepackage{tikz-3dplot}              % For 3D graphics
+
+% === Tables and Arrays ===
+\usepackage{array}                    % Enhanced tabular environments
+
+% === Code Listings and Algorithms ===
+\usepackage{algorithm}                % For algorithm blocks
+\usepackage{algpseudocode}            % For pseudocode
+\usepackage{listings}                 % For code listings
+\usepackage{verbatim}                 % For multiline comments
+
+% === Colors and Styling ===
+\usepackage{xcolor}                   % Extended color support
+\usepackage{color}                    % For color definitions
+\usepackage[fitting]{tcolorbox}       % For colored boxes
+
+% === References, Hyperlinks and Cross-Referencing ===
+\usepackage{xurl}                     % For URLs
+% \usepackage[
+%     acronyms,       % For acronyms
+%     acronym,        % For acronyms
+%     automake,       % Automatically make glossaries
+%     toc,            % Add glossaries to the Table of Contents
+%     acronyms,       % Enable acronyms
+%     nonumberlist    % Suppress page numbers in the glossary
+% ]{glossaries}
+% \makeglossaries                       % Initialize glossaries
+\usepackage{bookmark}                 % Better PDF bookmarks (fixes warnings)
+\usepackage{hyperref}                 % Enables hyperlinks and PDF metadata (bookmarks option removed)
+
+% === Text Formatting and Typography ===
+\usepackage[none]{hyphenat}           % Disables hyphenation throughout the document
+\usepackage{pbox}                     % For parbox with line breaks
+\usepackage{lmodern}                  % For Latin Modern needed for tcolorbox
+\usepackage[T1]{fontenc}              % Use T1 font encoding for better character support
+% \usepackage{textcomp}               % Provides \textquotedbl command
+% \usepackage{mathptmx}               % Times New Roman font for math
+% \usepackage{txfonts}                % Times New Roman font for text and math
+\usepackage{times}                    % Times New Roman font for text
+\renewcommand{\rmdefault}{ptm}      % Set Times New Roman as the default font
+
+
+% === Miscellaneous Utilities ===
+\usepackage{lipsum}                   % For placeholder text
+\usepackage[nodayofweek]{datetime}    % For date formatting
+\usepackage{etoolbox}                 % For patching commands
+\usepackage{pgffor}                   % For loop constructs
+\usepackage[useregional]{datetime2}

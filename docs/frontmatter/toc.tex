@@ -1,0 +1,25 @@
+% Table of contents and lists
+% The \clearpage command ensures each list starts on a new page
+\phantomsection
+\addcontentsline{toc}{chapter}{Table of Contents}
+\tableofcontents
+\clearpage
+\phantomsection
+\listoffigures
+\addcontentsline{toc}{chapter}{List of Figures}
+\clearpage
+\phantomsection
+\listoftables
+\addcontentsline{toc}{chapter}{List of Tables}
+\clearpage
+\listofalgorithms
+\addcontentsline{toc}{chapter}{List of Algorithms}
+\clearpage
+\renewcommand{\lstlistlistingname}{List of Listings}
+\lstlistoflistings
+\addcontentsline{toc}{chapter}{List of Listings}
+\clearpage
+% \printglossary[type=\acronymtype, nogroupskip=true, title={List of Abbreviations}]
+% \clearpage
+% Switch to Arabic numerals for main content
+\pagenumbering{arabic}

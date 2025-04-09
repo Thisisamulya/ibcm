@@ -1,0 +1,179 @@
+%==============================================================================
+% CONFIGURATION SETTINGS
+%==============================================================================
+% These settings control the appearance and behavior of various document elements.
+% Modify these settings to match your institution's requirements or your preferences.
+
+% === TikZ and Graphics Configuration ===
+\usetikzlibrary{external, shapes.geometric, arrows, arrows.meta, decorations.pathmorphing, calc}
+
+% \usetikzlibrary{
+%     arrows, arrows.meta, automata, backgrounds, calendar, 
+%     chains, decorations, external, fadings, fit, 
+%     matrix, patterns, patterns.meta, petri, 
+%     positioning, scopes, shadows, shapes, 
+%     shapes.geometric, shapes.arrows, shapes.symbols, 
+%     shapes.misc, shapes.multipart, shapes.callouts,
+%     spy, trees, turtle,
+%     decorations.pathmorphing, decorations.pathreplacing, 
+%     decorations.markings, decorations.footprints, 
+%     decorations.shapes, decorations.text,
+%     calc, fixedpointarithmetic, fpu, intersections, 
+%     math, through,
+%     3d, perspective,
+%     circuits, circuits.logic, circuits.ee,
+%     graphs, graphs.standard, 
+%     er, folding, lindenmayersystems, 
+%     mindmap, plothandlers, quotes, svg.path, topaths,
+%     babel
+% }
+\graphicspath{{images/}{./}}          % Set paths for images - both in images/ folder and root directory
+
+% === Color Definitions ===
+% These colors are used throughout the document for various elements
+% Modify them to match your institution's color scheme if necessary
+\definecolor{deepgray}{rgb}{0.4, 0.4, 0.4}    % Dark gray
+\definecolor{deepblue}{rgb}{0,0,0.6}          % Dark blue
+\definecolor{deepred}{rgb}{0.6,0,0}           % Dark red
+\definecolor{deepgreen}{rgb}{0,0.5,0}         % Dark green
+\definecolor{codegreen}{rgb}{0,0.6,0}         % Green for comments
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}      % Gray for line numbers
+\definecolor{codepurple}{rgb}{0.58,0,0.82}    % Purple for strings
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92} % Light background
+\definecolor{brown}{HTML}{612322}             % Brown for headers/footers
+\definecolor{darkred}{HTML}{C00000}          % Dark red for titles
+% Project Report Title Styling
+\newtcolorbox{titlebox}{
+    colframe=white,             % Frame color white (invisible)
+    colback=white,              % Background color white (invisible)
+    boxrule=0pt,                % No border
+    left=0pt,                   % No left padding
+    right=0pt,                  % No right padding
+    top=0pt,                    % No top padding
+    bottom=0pt,                 % No bottom padding
+    width=\textwidth,           % Full width of the text area
+    fit to height=1in,          % Height of the box
+    halign=center,              % Center the text horizontally
+    valign=center,              % Center the text vertically
+    fonttitle=\Huge\bfseries,   % Title font size and style
+    fit basedim=26pt,           % Fit the box to the text height
+    fontupper=\Huge\bfseries,   % Text font size and style
+    coltitle=black,             % Title color
+}
+
+% === Code Listing Styles ===
+\lstdefinestyle{pythonstyle}{
+    keywords={False, await, else, import, pass, None, break, except, in, raise, True, class, finally, is, return, and, continue, for, lambda, try, as, def, from, nonlocal, while, assert, del, global, not, with, async, elif, if, or, yield}, % Python keywords
+    keywordstyle=\color{deepblue}\bfseries,
+    ndkeywords={self},
+    ndkeywordstyle=\color{deepgray}\bfseries,
+    identifierstyle=\color{black},
+    sensitive=true,
+    comment=[l]{\#},
+    commentstyle=\color{deepgreen}\ttfamily,
+    stringstyle=\color{deepred}\ttfamily,
+    numberstyle=\tiny\color{gray},
+    morestring=[b]',
+    morestring=[b]``,
+    basicstyle={
+        \ttfamily
+        \hyphenpenalty=50
+        \exhyphenpenalty=50
+    },
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstdefinestyle{graystyle}{
+    backgroundcolor=\color{backcolour},
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle={\ttfamily\hyphenpenalty=50\exhyphenpenalty=50},
+    comment=[l]{\#},
+    commentstyle=\color{deepgreen}\footnotesize\rmfamily,
+    breakatwhitespace=false,
+    breaklines=true,
+    captionpos=b,
+    keepspaces=true,
+    numbers=left,
+    numbersep=5pt,
+    showspaces=false,
+    showstringspaces=false,
+    showtabs=false,
+    tabsize=2
+}
+
+\lstset{style=graystyle}
+
+% Set page geometry with 1-inch margins on A4 paper
+\geometry{margin=1in}  % Uncomment to set 1-inch margins
+
+% Configure hyperref for proper cross-references and bookmarks
+\hypersetup{
+    breaklinks=true,            % allow line breaks in links
+    pdfstartview={FitH},        % fits the width of the page to the window
+    pdftitle={\docTitle},       % title
+    pdfauthor={\pdfauthor},     % author
+    pdfsubject={\pdfsubject},   % subject of the document
+    pdfcreator={\studentlist},  % creator of the document
+    pdfkeywords={\pdfkeywords}, % list of keywords
+    colorlinks=false,           % false: boxed links; true: colored links
+    linkcolor=deepblue,         % color of internal links
+    citecolor=deepred,          % color of links to bibliography
+    filecolor=deepgreen,        % color of file links
+    urlcolor=blue               % color of external links
+}
+
+% Typography settings
+\sloppy
+\hfuzz=99pt                     % Suppress warnings for overfull hboxes
+\vfuzz=99pt                     % Suppress warnings for overfull vboxes
+\hbadness=10000                 % Suppress warnings for underfull hboxes
+\exhyphenpenalty=10000          % Suppress hyphenation across lines
+\hyphenpenalty=10000            % Suppress hyphenation across lines
+% \raggedbottom                   % Allow pages to be ragged at the bottom
+
+\renewcommand{\cftbeforetoctitleskip}{-.5em}
+% \renewcommand{\cftaftertoctitleskip}{1em}
+\renewcommand{\contentsname}{\hfil Contents}
+\addtocontents{toc}{
+    \textbf{S .No. \leftskip2cm Chapter Name \hfill Page No.}\par
+}   % Add 'S. No.', 'Name of Chapter', and 'Page No.' to the ToC
+
+% Add a horizontal line after the Table of Contents header
+\addtocontents{toc}{
+    \protect\mbox{}\protect\hrulefill\par
+}% Add a horizontal line after the ToC header
+
+% %==============================================================================
+% % ACRONYM DEFINITIONS
+% %==============================================================================
+% % Define acronyms that will be used throughout the document
+% % Format: \newacronym{label}{abbreviation}{full form}
+% \newacronym{ai}{AI}{Artificial Intelligence}
+% \newacronym{ml}{ML}{Machine Learning}
+% \newacronym{nlp}{NLP}{Natural Language Processing}
+
+
+% %===============================================================================
+% % ADDITIONAL SETTINGS
+% %===============================================================================
+% % Add any additional settings or configurations here
+% % Chpater Tittle Formatting
+% \titleformat{\chapter}[display]
+%     {\normalfont\huge\bfseries\raggedleft}
+%     {\vspace{-40pt}                                 % Space before chapter number
+%     \chaptertitlename\ \thechapter}
+%     {5pt}                                           % Reduced space between chapter number and title
+%     {\Huge}                                         % Title font size
+%     []                                              % No additional code after title

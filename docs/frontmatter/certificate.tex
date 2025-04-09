@@ -1,0 +1,32 @@
+% --- Certificate Page ---
+\begin{letterheadpage}{Certificate}
+\noindent This is to certify that the major project work entitled \textbf{\textit{\docTitle}} was carried out by \studentgrammar{}, bona fide {student\ifnum\value{studentcount}=0\else s\fi} of \textbf{\college}. This work was carried out in partial fulfillment of the requirements for the degree of \textbf{Bachelor of Technology} in \textbf{\branchName} awarded by \textbf{\university} during the year {\academicYear} under the guidance of \textbf{\guide}, \textit{\guideDesignation}.The major project report has been approved as it meets the academic requirements in respect of major project work prescribed by the institution for the said degree.
+
+The results presented in this project report have not been submitted by {\ifnum\value{studentcount}=0 me\else us\fi} to any other university for the award of a degree.
+\vfill
+\studentsignature{}
+
+\noindent This is to certify that the above statement made by the candidate(s) is correct to the best of my knowledge.
+\vfill
+\begin{flushright}
+    \textbf{\textcolor{red}{Supervisor:}} \hfill Date: \underline{\hspace{3cm}}
+\end{flushright}
+
+% Signatures in a table format
+\begin{table}[H]
+    \centering 
+    \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}ccc@{}}
+         & & \\ % Add space between the lines
+        \textit{Guide} & \textit{Head of Department} & \textit{Principal} \\
+        \textbf{\guide} & \textbf{\hod} & \textbf{\principal} \\
+         & & \\ % Add space between the lines
+         & \textbf{ External Viva} & \\ 
+         & & \\
+        Name of Examiners & & Signature with Date \\ 
+    \end{tabular*}
+\end{table}
+
+\vspace{-0.5cm}
+% Switch to Roman numerals for front matter
+\pagenumbering{roman}
+\end{letterheadpage}

@@ -1,0 +1,62 @@
+% --- Title Page ---
+% This creates the title page using the variables defined above
+\begin{titlepage}
+    \begin{samepage}
+        \begin{center}
+            % First Line (17pt Bold)
+            \textbf{
+                \Large A MAJOR PROJECT\\
+                Stage - II Report\\[0.2cm]
+                on
+            }
+
+            % Seminar Title (24pt Bold)
+            \begin{titlebox}
+                \hfuzz=999pt
+                \textcolor{darkred}{\docTitle}
+            \end{titlebox}%
+
+            % Submitted to (14pt Bold)
+            \textbf{\large Submitted to}\\[0.2cm]
+
+            % University Name (12pt Bold)
+            \textbf{\MakeUppercase{\university}}\\[0.2cm]
+            
+            by\\[0.2cm] % (12pt Normal)
+
+            % Batch Code (16pt Bold)
+            \textbf{\large (BATCH: \batch)}\\
+
+            % Student Names and Roll Numbers (14pt Bold)
+            \textbf{\large 
+            \centering
+            \begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+                \studenttable
+            \end{tabular*}
+            }\\[0.2cm]
+
+            % Degree Title (12pt Normal)
+            {\normalsize in partial fulfilment of the requirements for the Award of the Degree \\of}\\[0.2cm]
+
+            % Degree Name (14pt Bold)
+            {\bfseries\large BACHELOR OF TECHNOLOGY}\\in\\[0.2cm]
+
+            % Department Name (14pt Bold)
+            {\large \textbf{\MakeUppercase{\branchName}}}\vfill
+
+            % Guide Name and Designation (14pt Bold)
+            {\large\bfseries Under the Guidance of \\ \textcolor{red}{\guide} \\ \guideDesignation}\vfill
+            
+            % Display College Logo
+            \includegraphics[width=0.2\textwidth]{\collegelogo}\vfill
+            
+            % Department Name (12pt Bold)
+            \resizebox{.8\textwidth}{!}{\textbf{\textcolor{blue}{\MakeUppercase{Department of \branchName{}}}}}\\[0.2cm]
+            % Display College Banner
+            \includegraphics[width=1\textwidth]{\collegebanner}
+            
+            % Date and Year
+            \normalfont \monthname, \the\year 
+        \end{center}
+    \end{samepage}
+\end{titlepage}

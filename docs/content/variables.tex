@@ -1,0 +1,90 @@
+%==============================================================================
+% DOCUMENT VARIABLES
+%==============================================================================
+% IMPORTANT: Edit these variables to customize your document
+% These variables are used throughout the document for titles, headers, etc.
+% Changing them here will update them everywhere they are used
+
+% --- Document Information ---
+\newcommand{\docTitle}{Your Document Title - Title of the project}  % Full title of the document
+\newcommand{\headerTitle}{Short Header Title}  % Use short title or \docTitle for header
+\newcommand{\docSubtitle}{Subtitle (If Applicable)}
+\newcommand{\batch}{XX}
+\newcommand{\courseName}{Final Year Project}  % Course name (e.g., B.Tech, M.Tech, etc.)
+\newcommand{\keyWords}{Keyword1, Keyword2, Keyword3}
+\newcommand{\docVersion}{1.0}  % Document version
+
+% --- Student Details ---
+\newcommand{\studentName}{Student 1 Name}  % Full name of the student
+\newcommand{\studentRoll}{217Y1A05XX}
+
+\addstudent{\studentName}{\studentRoll}
+% Use the \addstudent command to include additional students in the report.
+% Example:
+\addstudent{Student 2 Name}{217Y1A05YY}
+% \addstudent{Student 3 Name}{217Y1A05ZZ}
+% \addstudent{Student 4 Name}{217Y1A05AA}
+% \addstudent{Student 5 Name}{217Y1A05BB}
+% \addstudent{Student 6 Name}{217Y1A05CC}
+% \addstudent{Student 7 Name}{217Y1A05DD}
+
+% --- Institution Details ---
+\newcommand{\college}{MLR Institute of Technology and Management}
+\newcommand{\collegeShort}{MLRITM}
+\newcommand{\collegeFull}{Marri Laxman Reddy Institute of Technology and Management, Hyderabad}
+\newcommand{\university}{Jawaharlal Nehru Technological University, Hyderabad (JNTUH)}
+\newcommand{\collegelogo}{MLRS-logo.png}
+\newcommand{\collegebanner}{MLRS-banner.png}
+
+% --- Department and Course Details ---
+% Replace with your actual department and branch information
+\newcommand{\deptName}{[Department Name]}                % Example: Department of Computer Science and Engineering
+\newcommand{\deptNameShort}{[Dept. Short Name]}          % Example: Dept. of CSE
+\newcommand{\branchName}{[Branch Name]}                  % Example: Computer Science and Engineering
+\newcommand{\branchCode}{[Branch Code]}                  % Example: CSE or 05
+\newcommand{\semester}{[Current Semester]}               % Example: VII (7th) Semester
+
+% --- Guide and Faculty Details ---
+% Replace placeholder text with actual names and titles
+\newcommand{\guide}{[Guide Name]}                       % Example: Dr. S Pratap Singh
+\newcommand{\guideDesignation}{[Position]}              % Example: Professor
+\newcommand{\supervisor}{[Supervisor/Coordinator Name]}  % Example: Dr. S Pratap Singh
+\newcommand{\supervisorDesignation}{[Supervisor Designation]}  % Example: Professor
+\newcommand{\hod}{[HOD Name]}                           % Example: Dr. K. Abdul Basith
+\newcommand{\hodDesignation}{Head of CSE Department}    % Example: Head of CSE Department
+\newcommand{\principal}{[Principal Name]}               % Example: Dr. R. Murali Prasad
+\newcommand{\principalDesignation}{Principal}           % Example: Principal
+\newcommand{\director}{[Director Name]}                 % Example: Dr. P. Sridhar
+\newcommand{\directorDesignation}{Director}             % Example: Director
+
+% --- Academic Year ---
+\newcommand{\academicYear}{2024--2025}  % Set the academic year
+
+% --- Report Details ---
+\newcommand{\reportType}{Major Project}
+
+% --- Manual Date Option ---
+% Custom date setting using datetime package
+\newdate{customdate}{04}{04}{2024}  % Format: day, month, year
+\renewcommand{\today}{\displaydate{customdate}}  % Make \today use our custom date
+% The date will respect the defined formats like dashdate
+% Also set the year to some other year if needed
+% \renewcommand{\yearNum}{2023}  % Example: Set to 2023
+\newcommand{\submissiondate}{\today}
+\newcommand{\yearNum}{\the\year}
+\newdateformat{dashdate}{\twodigit{\THEDAY}-\twodigit{\THEMONTH}-\THEYEAR}
+
+% --- Metadata [Do not required editing] ---
+\newcommand{\studentId}{\studentRoll}
+\newcommand{\authorName}{\studentlist}
+\newcommand{\authorID}{\studentId}
+
+\newcommand{\pdfkeywords}{\keyWords}
+\newcommand{\pdfauthor}{\studentRolllist}
+\newcommand{\pdfsubject}{\courseName}
+\newcommand{\reportName}{\reportType{} ({\academicYear})}
+
+% Title page settings
+\title{\docTitle}
+\author{\authorName \\ \authorID \\ Guide: \guide}
+\date{\today}  % Use \date{} for no date, or \date{Month Year} for a specific date

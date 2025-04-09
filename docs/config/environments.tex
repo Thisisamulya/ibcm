@@ -1,0 +1,86 @@
+%==============================================================================
+% CUSTOM ENVIRONMENTS
+%==============================================================================
+% These environments provide consistent formatting for specific document elements
+% Modify these environments to match your institution's requirements or preferences
+
+% Abstract environment styling
+% The abstract provides a summary of the entire document
+\renewenvironment{abstract}{
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Abstract}  % This adds Abstract to the TOC
+    \vspace*{-1cm}
+    \begin{center}
+        \Huge\bfseries Abstract
+    \end{center}
+    \vspace{0.5cm}
+    \begin{spacing}{1.5}
+    % \itshape % Uncomment to italicize the abstract text
+}{
+    \end{spacing}
+    \vspace{1cm}
+    \clearpage
+}
+
+% Acknowledgment environment styling
+% The acknowledgment provides a section to thank contributors
+\newenvironment{acknowledgment}{
+    \clearpage
+    \phantomsection
+    \addcontentsline{toc}{chapter}{Acknowledgment}  % This adds Acknowledgment to the TOC
+    \vspace*{-1cm}
+    \begin{center}
+        \Huge\bfseries Acknowledgment
+    \end{center}
+    \vspace{0.5cm}
+    \begin{spacing}{1.5}
+    \noindent
+    % \itshape % Uncomment to italicize the acknowledgment text
+    \noindent
+}{
+    \end{spacing}
+    \vspace{1cm}
+    \clearpage
+}
+
+% Generic environment for letterhead pages with watermark
+\newenvironment{letterheadpage}[1]{
+    \clearpage
+    \newgeometry{top=1in,bottom=1in,left=1in,right=1in} % Set custom margins
+    \thispagestyle{empty}
+    \phantomsection
+    \addcontentsline{toc}{chapter}{#1}  % Add to TOC with the provided title in uppercase
+    \begin{center}
+        \noindent\includegraphics[width=1\linewidth]{\collegebanner}\\
+        {\color{red}\hrule height 2pt width \textwidth}
+        \noindent \begin{flushright}
+            % Date: \texttt{\date{}\today}
+            Date: \texttt{\dashdate\today}
+        \end{flushright}
+        {\Large\textbf{\underline{\MakeUppercase{#1}}}\vspace{-1cm} \par}    
+    \end{center}
+    % Border based on geometry margin settings
+    \begin{tikzpicture}[remember picture, overlay]
+        \draw[line width=1pt] 
+            ($ (current page.north west) 
+                + (\oddsidemargin + 0.75in, 
+                -\topmargin - 0.75in - \voffset - \headheight - \headsep) $) 
+                rectangle 
+            ($ (current page.north west) 
+                + (\oddsidemargin + 1.25in + \textwidth, 
+                -\topmargin - 1.25in - \voffset - \headheight - \headsep - \textheight) $);
+    \end{tikzpicture}
+    % Watermark logo
+    \par
+    \begin{tikzpicture}[remember picture, overlay]
+        \node[opacity=0.2, scale=1] at ($(current page.center) + (0.5\oddsidemargin, 0)$) {\includegraphics[width=0.6\textwidth]{\collegelogo}};
+    \end{tikzpicture}
+    \begin{spacing}{1.5}%
+}
+{
+    \vspace{-0.5cm}
+    \end{spacing}
+    \clearpage
+    \restoregeometry % Restore the original geometry
+}

@@ -17,10 +17,7 @@ import {
   SidebarTrigger,
 } from "@/components/ui/sidebar"
 import { ThemeToggle } from "@/components/theme-toggle"
-import { toast } from "sonner"
 import { FontSizeToggle } from "@/components/font-size-toggle"
-import { Bell } from "lucide-react"
-import { Button } from "@/components/ui/button"
 import { NotificationPopover } from "@/components/notification-popover"
 
 export default function Page() {
@@ -59,7 +56,7 @@ export default function Page() {
               </Breadcrumb>
             </div>
             <div className="flex items-center gap-2">
-              {/* <FontSizeToggle increaseFontSize={increaseFontSize} decreaseFontSize={decreaseFontSize} /> */}
+              <FontSizeToggle increaseFontSize={increaseFontSize} decreaseFontSize={decreaseFontSize} />
               <NotificationPopover />
               <ThemeToggle />
             </div>

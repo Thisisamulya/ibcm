@@ -1,0 +1,54 @@
+# LaTeX intermediate and output files
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+*.dvi
+*.xdv
+*.ps
+*.synctex.gz
+*.synctex(busy)
+*.fdb_latexmk
+*.fls
+*.nav
+*.snm
+*.vrb
+*.blg
+*.bbl
+*.glsdefs
+
+# Generated files by LaTeX editors
+*.acn
+*.acr
+*.alg
+*.glg
+*.glo
+*.gls
+*.ist
+*.maf
+*.mtc
+*.mtc0
+*.run.xml
+*.thm
+*.md5
+*.auxlock
+*.lol
+*.loa
+
+# Backup files
+*.bak
+*.sav
+*.swp
+*.tmp
+*.backup
+*.orig
+
+# pdf
+report-draft.pdf
