@@ -8,163 +8,326 @@
 \begin{document}
    % --- Main Content ---
 \chapter{Introduction}
-\label{chap:introduction}
+\label{chap:introduction-unique}
 
-The introduction should provide background information on your topic, explain the significance of your research, and clearly state your research question or objective. This chapter should also outline the structure of the document and briefly summarize each subsequent chapter. 
-\section{Background}
-This section should provide context for your research, explaining fundamental concepts necessary for understanding your work. 
-% Artificial Intelligence (\gls{ai}) is a rapidly growing field. Subfields such as \gls{ml} and \gls{nlp} are gaining significant attention.
+The construction industry, a cornerstone of urban development, often faces challenges in efficiently monitoring the progress of large-scale projects. Traditional methods involve frequent site visits by technical experts, which are both time-consuming and resource-intensive. With the rapid expansion of urban infrastructure projects, there is an increasing need for innovative solutions to streamline this process.
 
 \section{Motivation}
-Explain why your research topic is important and what gap in knowledge it addresses.
+\label{sec:motivation-unique}
+The rapid urbanization and increasing scale of construction projects present significant challenges in effectively monitoring progress. Traditional methods, reliant on frequent on-site visits by technical experts, are labor-intensive, time-consuming, and prone to human error. Advancements in machine learning and image processing offer an opportunity to automate and streamline progress tracking in construction. Utilizing images as a data source enables continuous monitoring without the need for physical site visits. This approach not only improves accuracy but also provides real-time insights into the construction stages.
 
-\section{Problem Statement}
-Clearly articulate the specific problem or question your research aims to address.
+\section{Problem}
+\label{sec:problem-unique}
+Monitoring construction progress is a critical but challenging aspect of project management. Traditional methods rely on frequent site visits and manual inspections, which are time-consuming, costly, and often disrupted by logistical constraints. As the number of large-scale urban projects increases, this approach becomes impractical and inefficient. Delays and inaccuracies in tracking construction stages can lead to mismanagement, cost overruns, and delayed project delivery. Moreover, the reliance on subjective assessments during manual inspections introduces the risk of human error. Existing solutions often lack automation and real-time capabilities, making it difficult to maintain consistency in progress tracking.
 
-\section{Outline of the Report}
-Provide a brief overview of the structure of your document, summarizing the content of each chapter.
+\section{Solution}
+\label{sec:solution-unique}
+To address the challenges of construction progress monitoring, this project proposes a machine learning (ML)-based software solution that automates the process using image analysis. The system leverages advanced ML algorithms trained on construction site images to identify and classify stages of construction activities, such as foundation, superstructure, and interior work. Users can upload images and input details about specific activities to receive real-time progress assessments.
+\section{Scope}
+\label{sec:scope-unique}
+The proposed system automates progress monitoring for building construction projects using machine learning to analyze site images. It identifies construction stages, such as foundation, superstructure, and interior work, providing real-time progress tracking and detailed analysis. The system includes features like error detection to ensure accurate inputs and historical data comparison to track changes over time.
+
+\section{Problem Definition}
+\label{sec:problem-definition-unique}
+The monitoring of construction progress typically requires on-site visits by technical experts, which is impractical due to the large number of projects in Indian cities. A machine learning (ML) solution can automate this by analyzing site images to identify construction stages, allowing urban local bodies (ULBs) and state agencies to track progress daily or in real time. The software will process images, categorize construction activities (e.g., foundation, superstructure, interiors), and use specific ML algorithms trained for each stage.
+
+\section{Objectives}
+\label{sec:objectives-unique}
+\begin{enumerate}
+    \item Develop a Machine Learning-Based System: Create a software solution that utilizes machine learning algorithms to analyze construction site images.
+    \item Enable Image-Based Progress Assessment: Allow users to upload images and specify the construction activity type (e.g., foundation, superstructure, interiors).
+    \item Provide Stage Identification: Accurately identify and describe the current stage of construction based on the uploaded images.
+    \item Track and Compare Progress: Compare current construction status with historical data to report progress over time.
+\end{enumerate}
+
+\section{Limitations}
+\label{sec:limitations-unique}
+\begin{enumerate}
+    \item Narrow Scope: The system is currently limited to building construction projects and cannot be directly applied to other infrastructure types.
+    \item Image Quality Dependency: Poor image quality due to lighting, angles, or resolution may reduce the accuracy of the analysis.
+    \item Dataset Requirements: The system requires extensive datasets for training ML algorithms specific to various construction activities, which may be challenging to compile.
+    \item Error Sensitivity: The system might misinterpret incorrect inputs or raise unnecessary errors due to mismatched categories or unclear images.
+\end{enumerate}
+
 
 % CHAPTER 2: LITERATURE REVIEW
 \chapter{Literature Review}
-This chapter should synthesize existing research relevant to your topic. Analyze the current state of knowledge, identify gaps, and position your research within the existing literature.
 
-\section{Overview of Existing Work}
-Summarize key research papers, books, and other sources related to your topic.
+\section{Overview}
+The literature survey explores advancements in using machine learning (ML) and computer vision for automating construction progress monitoring. Key studies demonstrate the application of deep learning models, such as CNNs and ResNet, for identifying and classifying construction stages from site images. Techniques like feature extraction and image comparison enhance the accuracy of progress tracking and delay identification. Integrating remote sensing and ML enables real-time monitoring, while coupling with Building Information Modeling (BIM) centralizes data analysis. However, challenges persist, including dependency on high-quality, annotated datasets, computational demands, and addressing privacy concerns.
 
-\section{Current Trends}
-Discuss recent developments and emerging trends in your research area.
+\section{Existing System}
+In the current construction industry, monitoring the progress of building projects predominantly relies on manual inspections and site visits by technical experts. This process involves frequent visits to construction sites to assess the stage of various activities such as foundation work, superstructure development, or interior finishing. The observations are documented and compared with project timelines to evaluate progress.
 
-\section{Research Gaps}
-Identify limitations or gaps in existing research that your work aims to address.
+Some advanced systems incorporate Building Information Modeling (BIM) or project management tools for data visualization and tracking. However, these tools still depend on manual input and do not leverage automation or real-time analysis. Existing technologies lack the integration of machine learning and image analysis, which could drastically improve efficiency by automating progress tracking, reducing on-site visits, and enhancing decision-making.
+
+\textbf{Key Features of the Existing System:}
+\begin{enumerate}
+    \item \textbf{Manual Processes:} All evaluations and progress reports are generated based on human input, which increases the risk of subjectivity and inconsistencies.
+    \item \textbf{Time-Intensive:} Site visits for weekly or daily monitoring consume significant time and resources, especially for large-scale or geographically dispersed projects.
+    \item \textbf{Limited Real-Time Data:} Reports are often generated after site visits, leading to delays in identifying and addressing issues.
+\end{enumerate}
+
+\section{Disadvantages of Existing System}
+\begin{enumerate}
+    \item \textbf{Manual Dependency:} The system heavily relies on on-site inspections by technical experts, making it labor-intensive and time-consuming.
+    \item \textbf{Error-Prone Assessments:} Observations and evaluations are subjective and prone to human error, leading to inconsistencies in progress tracking.
+    \item \textbf{Scalability Issues:} The approach becomes impractical as the number of projects increases, particularly in urban areas with large-scale infrastructure development.
+    \item \textbf{Time Delays:} Generating progress reports after site visits results in delays in identifying issues and implementing corrective actions.
+    \item \textbf{Cost Inefficiency:} Frequent site visits and manual monitoring incur significant costs in terms of labor, transportation, and administrative overhead.
+\end{enumerate}
+
+\section{Proposed System}
+\begin{enumerate}
+    \item \textbf{Image-Based Progress Assessment:} Users can upload site images along with input details about the type of activity to be assessed (e.g., foundation, superstructure, interiors). The system uses ML algorithms trained on construction site images to identify and classify the current construction stage.
+    \item \textbf{Progress Tracking and Comparison:} Historical data, such as previously uploaded images and analysis results, is stored in the system. The system compares the current status with past data to provide insights into the project's progress over time.
+    \item \textbf{Real-Time Monitoring:} The system enables near real-time tracking of construction activities, helping project managers make timely decisions.
+    \item \textbf{Worker Safety:} By analyzing site images, the system can identify potential safety hazards, such as workers not wearing masks, helmets, proper outfits, or the absence of safety cones and machinery in unsafe conditions. Alerts are generated to notify project managers to take corrective actions.
+\end{enumerate}
+
+\section{Advantages of Proposed System}
+\begin{enumerate}
+    \item \textbf{Automation:} Eliminates the need for frequent on-site visits by technical experts, reducing manual effort and increasing efficiency.
+    \item \textbf{Real-Time Monitoring:} Provides near real-time progress updates through image analysis, enabling timely decision-making and reducing delays.
+    \item \textbf{Improved Accuracy:} Machine learning algorithms ensure precise identification of construction stages, minimizing errors caused by subjective human assessments.
+    \item \textbf{Progress Comparison:} The system compares current images with historical data, offering insights into progress trends and ensuring accountability in project timelines.
+\end{enumerate}
+
+
 
 % --- Theoretical Framework ---
-% CHAPTER 3: THEORETICAL FRAMEWORK
-\chapter{Theoretical Framework}
-Present the theoretical foundation of your research, including relevant models, equations, algorithms, or principles.
+% CHAPTER 3: SYSTEM DESIGN
 
-\section{Key Concepts}
-Define and explain the fundamental concepts central to your research.
+\chapter{System Design}
 
-\section{Mathematical Formulation}
-Present any relevant mathematical formulations, theorems, or proofs.
+\section{Feasibility Study}
 
-\section{Algorithms}
-This section presents the algorithms used in this research.
-
-% Example of how to include an algorithm with proper referencing
-Algorithm \ref{alg:example} demonstrates a basic search algorithm. This example shows how to properly format and include algorithms in your document.
-
-\begin{algorithm}
-\caption{Binary Search Algorithm}
-\label{alg:example}
-\begin{algorithmic}[1]
-\Procedure{BinarySearch}{$A, n, x$}
-    \State $low \gets 1$
-    \State $high \gets n$
-    \While{$low \leq high$}
-        \State $mid \gets low + \lfloor (high - low) / 2 \rfloor$ \Comment{Avoid integer overflow}
-        \If{$A[mid] < x$}
-            \State $low \gets mid + 1$
-        \ElsIf{$A[mid] > x$}
-            \State $high \gets mid - 1$
-        \Else
-            \State \Return $mid$
-        \EndIf
-    \EndWhile
-    \State \Return $-1$
-\EndProcedure
-\end{algorithmic}
-\end{algorithm}
-
-\subsection{Algorithm Complexity Analysis}
-When analyzing the time complexity of Algorithm \ref{alg:example}, we find that binary search operates in $O(\log n)$ time, where $n$ is the number of elements in the sorted array. This is because each comparison eliminates approximately half of the remaining elements.
-
-\subsection{Pseudocode Formatting Tips}
-When writing algorithms:
+\subsection{Technical Feasibility}
+The IBCM system leverages advanced machine learning algorithms and modern web technologies to ensure technical feasibility. The system is built using a three-tier architecture:
 \begin{itemize}
-    \item Use consistent indentation
-    \item Number each line for easy reference with \texttt{algorithmic[1]}
-    \item Include proper comments for complex steps
-    \item Clearly define inputs and outputs of procedures
+    \item \textbf{Frontend:} Developed using Next.js with shadcn UI components, providing a responsive and user-friendly interface for users to upload images, view progress, and generate reports.
+    \item \textbf{Backend:} Powered by Flask RESTful APIs, enabling efficient communication between the frontend and the database while handling image processing tasks.
+    \item \textbf{Database:} MySQL is used as the relational database management system, ensuring reliable storage and retrieval of user data, project details, and analysis results.
 \end{itemize}
+The system integrates machine learning models for construction stage classification, SSIM-based progress analysis, and YOLO-based PPE detection, ensuring accurate and automated monitoring of construction progress and worker safety compliance.
 
-% IMPORTANT: Always reference every figure in the text BEFORE it appears
-Figure \ref{fig:external_image} illustrates a key concept of this research. As shown in the figure, important relationships between variables can be visualized.
-As shown in Figure \ref{fig:tikz_figure}, the following diagram illustrates the relationship between key variables.
+\subsection{System Complexity}
+The IBCM system is designed to handle complex workflows while maintaining usability for diverse user groups, including engineers, auditors, and safety officers. Key aspects of system complexity include:
+\begin{itemize}
+    \item \textbf{Image Processing:} The system processes high-resolution images to classify construction stages, detect changes, and identify safety compliance. This requires efficient algorithms and sufficient computational resources.
+    \item \textbf{Data Management:} The database schema supports multiple entities, such as users, projects, images, and analysis results, with relationships ensuring data integrity and scalability.
+    \item \textbf{Role-Based Access Control:} The system implements role-based access control to manage permissions for different user classes, such as administrators, engineers, and auditors.
+    \item \textbf{Integration of Modules:} The construction progress monitoring and worker safety compliance modules operate independently but are integrated into a unified dashboard for comprehensive project oversight.
+\end{itemize}
+Despite its complexity, the system's modular architecture ensures maintainability and extensibility, allowing for future enhancements such as real-time monitoring and integration with external project management tools.
 
-% Example of adding a referenced figure
+\subsection{Economic Feasibility}
+The economic feasibility of the IBCM system is evaluated based on the estimated costs associated with its development, deployment, and maintenance. Table \ref{tab:cost-breakdown} provides a detailed breakdown of the costs.
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{8cm}|r|}
+        \hline
+        \textbf{Category} & \textbf{Description} & \textbf{Estimated Cost (INR)} \\ \hline
+        Development Cost & Cost incurred utilizing existing developer resources for coding, debugging, and implementing the software solution. & 3,000 \\ \hline
+        Domain & Custom domain registration for one year. & 800 \\ \hline
+        Hosting & Basic hosting plan for one year (optional if deploying publicly). & 2,000 \\ \hline
+        Miscellaneous & Internet usage, printing, documentation, etc. & 1,000 \\ \hline
+        \textbf{Total Estimated Cost} &  & \textbf{6,800} \\ \hline
+    \end{tabular}
+    \caption{Cost Breakdown of the Project}
+    \label{tab:cost-breakdown}
+\end{table}
+
+\section{Software Requirement Specification (SRS)}
+Software requirements are the specifications of what a software system should do, how it should behave, and what constraints it should satisfy. Table \ref{tab:software-requirements} represents the software requirements essential for the project. They are critical for communicating the expectations and needs of the stakeholders, as well as for guiding the design, development, testing, and maintenance of the software.
+
+Additional software requirements include:
+\begin{enumerate}
+    \item Python 3.8 or higher
+    \item Browser
+    \item Any Code Editor
+\end{enumerate}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|p{10cm}|}
+        \hline
+        \textbf{Category} & \textbf{Requirement} \\ \hline
+        Operating System & Windows 10 or later, macOS, Linux (Ubuntu 20.04 or later) \\ \hline
+        Programming Languages & Python (for backend), JavaScript (for frontend and interactivity) \\ \hline
+        Frameworks & TensorFlow (ML models), OpenCV (image processing), React, Node.js \\ \hline
+        Databases & MongoDB (primary database), Firebase (real-time database for notifications) \\ \hline
+        Machine Learning Models & YOLO (for object detection) \\ \hline
+        Web Technologies & HTML5, CSS3, WebSockets for real-time dashboard updates \\ \hline
+        Version Control & Git (repository hosting on GitHub or GitLab) \\ \hline
+        Browser Compatibility & Chrome, Firefox, Edge, Safari \\ \hline
+        AR/VR Tools & Unity, WebXR for augmented and virtual reality features \\ \hline
+        Encryption & HTTPS for secure communication, AES for data storage encryption \\ \hline
+    \end{tabular}
+    \caption{Software Requirements Table}
+    \label{tab:software-requirements}
+\end{table}
+
+\subsection{Functional Requirements}
+\begin{enumerate}
+    \item \textbf{Image Upload Functionality:}
+    \begin{itemize}
+        \item Users should be able to upload construction site images to the system.
+        \item The system should support various image formats (e.g., JPEG, PNG).
+    \end{itemize}
+    \item \textbf{Activity Selection:}
+    \begin{itemize}
+        \item Users must provide information about the type of construction activity (e.g., foundation, superstructure, interior works).
+        \item The system should allow the selection of predefined activity categories.
+    \end{itemize}
+    \item \textbf{Stage Identification:}
+    \begin{itemize}
+        \item The system should analyze the uploaded images and identify the current stage of construction.
+        \item It should use machine learning algorithms trained on construction site data for accurate classification.
+    \end{itemize}
+    \item \textbf{Progress Comparison:}
+    \begin{itemize}
+        \item The system should store historical data, including previous images and their analyzed results.
+        \item It should compare the current status with historical data to determine progress and provide a detailed progress report.
+    \end{itemize}
+\end{enumerate}
+
+\subsection{Non-Functional Requirements}
+\begin{enumerate}
+    \item \textbf{Performance:}
+    \begin{itemize}
+        \item The system must process and classify uploaded images within 5 seconds to ensure real-time responsiveness.
+        \item Support concurrent uploads and processing for up to 500 users without significant performance degradation.
+    \end{itemize}
+    \item \textbf{Scalability:}
+    \begin{itemize}
+        \item The system should handle increasing numbers of projects, users, and image uploads without impacting functionality.
+        \item Design for future expansion to support additional features like new construction activity categories or infrastructure types.
+    \end{itemize}
+    \item \textbf{Reliability:}
+    \begin{itemize}
+        \item The system must maintain 99.9% uptime to ensure availability for stakeholders.
+        \item Implement failover mechanisms to handle unexpected crashes or downtime.
+    \end{itemize}
+    \item \textbf{Usability:}
+    \begin{itemize}
+        \item Provide an intuitive, user-friendly interface that is easy to navigate for users with varying technical expertise.
+        \item Include clear instructions and prompts for uploading images, selecting activities, and interpreting reports.
+    \end{itemize}
+    \item \textbf{Security:}
+    \begin{itemize}
+        \item Ensure secure storage and transfer of sensitive data, including uploaded images and project details.
+        \item Implement role-based access controls (RBAC) to restrict data access to authorized users.
+        \item Use encryption (e.g., HTTPS, AES) for data in transit and at rest.
+    \end{itemize}
+\end{enumerate}
+
+\section{Proposed System Architecture}
+% ...existing code...
+
 \begin{figure}[H]
     \centering
-    \includegraphics[width=0.5\textwidth]{example-image.jpg} % Replace 'sample-figure.jpg' with your image file name
-    \caption[Short caption for sample figure]{Detailed caption explaining the sample figure. The short caption appears in the list of figures.}
-    \label{fig:external_image}
+    \includegraphics[width=0.8\textwidth]{images/mermaid-ai-diagram-2025-04-27-100441.png}
+    \caption{Proposed System Architecture Diagram}
+    \label{fig:proposed-system-architecture}
 \end{figure}
 
-% Example of drawing a figure using TikZ
-\begin{figure}[H]
-    \centering
-    \begin{tikzpicture}
-        % Example TikZ drawing: A simple triangle
-        \draw[thick, blue] (0,0) -- (4,0) -- (2,3) -- cycle;
-        \node at (2,-0.5) {Base};
-        \node at (2,1.5) {Height};
-    \end{tikzpicture}
-    \caption[Short caption for TikZ figure]{Detailed caption explaining the TikZ-drawn figure. The short caption appears in the list of figures.}
-    \label{fig:tikz_figure}
-\end{figure}
+% ...existing code...
 
-% IMPORTANT: Every figure must be referenced in the text (e.g., "As shown in Figure \ref{fig:label}...")
+\section{Modules}
+% ...existing code...
 
-\section{Example Implementation}
-Listing \ref{lst:python_example} demonstrates a Python function implementation that doubles its input parameter. This code sample illustrates how to include formatted code in your document with syntax highlighting.
+\subsection{SSIM Module}
+The Structural Similarity Index (SSIM) module is responsible for comparing pairs of construction site images to evaluate visual differences. It calculates a similarity score that quantifies the structural changes between two images. This score is used to determine the progress of construction activities. The module ensures high accuracy by focusing on luminance, contrast, and structural information in the images.
 
-\begin{lstlisting}[language=Python, caption=Example Python Code, breaklines=true, label=lst:python_example]
-def example_function(parameter):
-    """
-    This is a sample function to demonstrate code inclusion. It takes a parameter and returns its double.
-    :param parameter: The input value to be doubled.
-    """
-    result = parameter * 2
-    return result
+\subsection{YOLO Module}
+The YOLO (You Only Look Once) module is used for object detection and classification in construction site images. It identifies specific elements such as workers, safety equipment (e.g., helmets, vests), and machinery. This module enhances worker safety compliance by detecting the absence of required safety gear and flagging potential hazards. YOLO's real-time detection capabilities make it suitable for dynamic construction environments.
 
-# Example usage
-value = 42
-print(f"The result is: {example_function(value)}")
-\end{lstlisting}
+% ...existing code...
 
-\subsection{Example Equations}
-Below are sample equations formatted in LaTeX:
+\section{Algorithms, Methods, and Techniques Used}
+\subsection{Structural Similarity Index (SSIM)}
+The SSIM algorithm is used to compare two images and measure their similarity. It evaluates structural changes by focusing on luminance, contrast, and structural information. SSIM is particularly effective for detecting visual differences in construction site images, enabling accurate progress tracking. The algorithm outputs a similarity score, which is used to quantify the percentage of work completed.
 
-% Inline equation example
-The quadratic formula $ax^2 + bx + c = 0$ has the solution $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+\subsection{YOLO (You Only Look Once)}
+YOLO is a real-time object detection algorithm that identifies and classifies objects within images. It divides the image into a grid and predicts bounding boxes and class probabilities for each grid cell. In this system, YOLO is used to detect safety equipment (e.g., helmets, vests) and machinery, ensuring compliance with worker safety standards. Its speed and accuracy make it ideal for dynamic construction environments.
 
-% Display equation example
-\begin{equation}
-    E = mc^2
-\end{equation}
+\subsection{Machine Learning Models}
+Custom machine learning models are trained on labeled datasets of construction site images to classify construction stages (e.g., foundation, superstructure, interiors). These models use convolutional neural networks (CNNs) to extract features and identify patterns in the images. The classification results are used to determine the current stage of construction.
 
-% Equation array example
-\begin{align}
-    (a+b)^2 &= a^2 + 2ab + b^2\\
-    (a-b)^2 &= a^2 - 2ab + b^2
-\end{align}
+\subsection{Database Management with SQLAlchemy}
+SQLAlchemy, a Python-based Object Relational Mapper (ORM), is used to manage interactions with the database. It simplifies the storage and retrieval of analysis results, user data, and project details. The ORM ensures data integrity and scalability, supporting the system's ability to handle large datasets.
+
+\subsection{Flask RESTful APIs}
+Flask is used to create RESTful APIs that facilitate communication between the frontend and backend. These APIs handle image uploads, process requests, and return analysis results. Flask's lightweight nature and flexibility make it suitable for building scalable web applications.
+
+\subsection{Image Preprocessing with OpenCV}
+OpenCV is used for preprocessing images before analysis. This includes resizing, normalization, and noise reduction to ensure consistent input quality for the SSIM and YOLO modules. Preprocessing improves the accuracy and reliability of the system's analysis.
+
+\subsection{Data Visualization Techniques}
+The frontend employs data visualization techniques to present analysis results in an intuitive manner. Charts, tables, and progress bars are used to display similarity scores, progress percentages, and historical trends. These visualizations enhance user understanding and decision-making.
+% ...existing code...
+
+\section{Summary}
+The proposed system addresses the challenges of monitoring construction progress in a rapidly urbanizing world, where traditional manual methods are increasingly inefficient and impractical. It introduces a machine learning (ML)-based software solution designed to analyze site images and automate the identification of construction stages. By enabling users to upload images and specify construction activities, such as foundation, superstructure, or interior works, the system can assess progress accurately and in real time.
+
+Key features of the system include image-based stage identification, which uses trained ML algorithms to classify activities, and progress comparison, which evaluates changes by comparing newly uploaded images with historical data. The system also incorporates an error-detection mechanism to ensure data accuracy by raising alerts when there is a mismatch between uploaded images and selected activity types.
+
+This solution offers several advantages, including reducing the need for frequent site visits, saving time and costs, and improving accuracy in tracking progress. By generating detailed visual and textual progress reports, it supports project managers in making timely and informed decisions. While initially focused on building construction, the system is designed to be scalable, making it applicable to other infrastructure projects such as bridges, roads, and industrial developments.
+
+
 
 % --- Methodology ---
-% CHAPTER 4: METHODOLOGY
-\chapter{Methodology}
-Describe your research approach, methods, experimental setup, and data collection procedures.
+% CHAPTER 4: DESIGN
+\chapter{Design}
 
-\section{Research Approach}
-Explain the overall approach or strategy you used in your research.
+Construction progress monitoring is a critical aspect of project management, ensuring that timelines are met, resources are effectively utilized, and overall project goals are achieved. However, traditional methods of monitoring require frequent site visits by technical experts to visually assess and document progress. This process is not only time-consuming and labor-intensive but also becomes increasingly impractical as the number of construction projects continues to grow, particularly in urban areas of countries like India.
 
-\section{Experimental Setup}
-Describe the equipment, materials, or software used in your research.
+The reliance on manual methods introduces challenges such as delays in reporting, inconsistencies in assessments, and higher costs. These limitations highlight the need for innovative, technology-driven solutions to streamline progress monitoring and improve accuracy. One promising approach is the application of machine learning (ML) and image analysis to automate the process of construction progress tracking.
 
-\section{Data Collection}
-Explain how you collected data, including any sampling strategies or selection criteria.
+\section{UML Diagrams}
+\subsection{Use Case Diagram}
+A Use Case Diagram for an AI-driven inspection system of institutions illustrates the key interactions between actors (users) and the system. The primary actor is the Inspector, who interacts with the system to perform tasks such as initiating inspections, viewing reports, and reviewing detected anomalies. Other actors may include the AI System, which automates tasks like data collection through sensors and cameras, and data analysis using machine learning.
+models, and generating inspection reports. The AI System uses data from various sensors and historical records to analyze and identify potential issues, generating actionable reports. This diagram captures how the Inspector relies on the system to automate and enhance the 
+inspection process while ensuring that key insights are communicated effectively for decision- making.
 
-\section{Analysis Methods}
-Describe the statistical techniques or analytical methods you used to process and interpret your data.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.4\textwidth]{images/mermaid-ai-diagram-2025-04-27-111841.png}
+    \caption{Use Case Diagram for AI-Driven Inspection System}
+    \label{fig:use-case-diagram}
+\end{figure}
+
+\subsection{Class Diagram}
+Class diagram is a static diagram. The Figure 4.4 represents the static view of an application. Class diagram is not only used for visualizing, describing, and documenting different aspects of a system but also for constructing executable code of the software application. Class diagram describes the attributes and operations of a class and also the constraints imposed on the system. The class diagrams are widely used in the modeling of object-oriented systems because they are the only UML diagrams, which can be mapped directly with object-oriented languages.
+A class diagram for an AI-driven inspection system of institutions would define key classes, their attributes, methods, and relationships. The Inspector class would represent the user who manages inspections, with attributes like name, role, and inspectionHistory, and methods such as initiateinspection() and viewReport().
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/mermaid-ai-diagram-2025-04-27-113217.png}
+    \caption{Sequence Diagram for AI-Driven Inspection System}
+    \label{fig:sequence-diagram}
+\end{figure}
+\subsection{Sequence Diagram}
+The sequence diagram below illustrates the process flow of the AI-driven inspection system. It shows the interactions between the Institution, Inspection System, Data Collection Module, Data Preprocessing Module, AI Analysis Module, and Human Inspector.
+The AI-driven inspection process begins with initiating an inspection request, either manually or automatically. The system collects relevant data from various sources, including documents, reports, sensors, and IoT devices. This data is then preprocessed to ensure quality and consistency. AI models analyze the data, identifying patterns and potential issues, which leads to the generation of a preliminary report. A human inspector reviews the report to validate the findings and provide additional insights. If more data is needed, the process loops back to data collection; otherwise, a final report is compiled, combining AI and human inputs. This report is then shared with the institution for further action. The sequence diagram captures the dynamic interactions and flow of information between the components of the system, highlighting the collaboration between AI and human inspectors in enhancing inspection efficiency and accuracy.
+
+
+\subsection{Component Diagram}
+\subsection{Activity Diagram}
+
+\section{ER Diagram}
+
+\section{Data Flow Diagrams}
+\subsection{0-Level Diagram}
+\subsection{1-Level Diagram}
+\subsection{2-Level Diagram}
+
+\section{Summary}
+
+% ...existing code...
+
 
 % --- Implementation ---
 % CHAPTER 5: IMPLEMENTATION
@@ -182,16 +345,21 @@ Once the backend processes a pair of images and computes the progress using SSIM
 \textbf{Retrieving and Using Stored Data}
 To access stored analysis records, a new API route like \texttt{/results} can be introduced. This endpoint fetches all past analyses, returning them in a structured JSON format to the frontend. These records can then be visualized on dashboards, filtered by category, date, or progress level. This persistent storage approach ensures that even if the system restarts or if users want to audit progress later, all relevant data remains available, creating a seamless bridge between AI analysis and project documentation.
 
-\section{Database Schema for Users Table}
-The \texttt{users} table is defined within the \texttt{ibcm} schema to manage user information. Below is a breakdown of its structure:
+\setlength{\baselineskip}{1.0\baselineskip}
+
+\section{Flow chart/Modules Flow chart }
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/Image 2025-04-27 at 13.08.47_8d5485ec.jpg}
+    \caption{Detailed View of System Architecture}
+    \label{fig:detailed-system-architecture}
+\end{figure}
+
+The figure above illustrates the detailed system architecture of the construction progress monitoring system. It highlights the interaction between the frontend, backend, and database layers. The frontend, built using Next.js, provides a user-friendly interface for uploading images and viewing progress reports. The backend, powered by Flask, processes the uploaded images and computes similarity scores using SSIM. The database, managed with SQLAlchemy, stores analysis results and historical data. The architecture also includes APIs for seamless communication between components. The modular design ensures scalability and maintainability. The system supports concurrent users and handles large datasets efficiently. This architecture forms the backbone of the proposed solution, enabling real-time monitoring and data-driven decision-making.
 
 
 \section{Module Description}
 To implement database integration in the construction progress monitoring system, the first step involves setting up the database configuration within the Flask application. This is typically done using SQLAlchemy, which provides an ORM (Object Relational Mapper) layer to interact with the database in a Pythonic way. The configuration includes defining the database URI—for example, using SQLite during development for simplicity or PostgreSQL for production environments—and initializing the SQLAlchemy instance with the Flask app. This step also involves setting any required options, such as turning off modification tracking to improve performance. Once configured, the application can automatically create the required tables upon initialization, ensuring that all necessary database structures are in place when the server starts.
-
-Next, the schema design defines how analysis results will be stored in the database. A model class, such as \texttt{AnalysisResult}, is created using SQLAlchemy, where each class attribute represents a column in the corresponding table. This model might include fields such as a unique identifier, the type of construction activity (e.g., foundation, superstructure, interiors), the similarity score calculated by the image analysis algorithm, the estimated percentage of work completed, and a timestamp indicating when the analysis was performed. Additionally, the filenames or file paths of the uploaded images used in the comparison are stored to maintain traceability. These models not only allow for easy insertion and querying of data but also help maintain a clean and structured way of handling complex application data.
-
-When a user uploads images for analysis, the backend logic responsible for handling the request processes the images and calculates the similarity score using the defined machine learning model. Once the analysis is complete, the relevant data—such as the project category, similarity score, work completion percentage, and image references—is packaged and inserted into the database using the model's interface. This automated recording of results ensures that each analysis session is stored persistently, providing a reliable history of construction progress over time. Committing these records to the database also means the system remains stateless across sessions, preserving data even if the application is restarted or deployed across multiple environments.
 
 To support data retrieval, a new API endpoint can be added that fetches stored analysis results from the database. This endpoint, typically implemented using a GET route, queries the database for recent records, formats them into JSON, and sends them to the frontend. The API response may include all stored metadata, such as the type of work, progress percentage, and associated image file paths. This modular approach allows for easy integration with the frontend dashboards, where users can view previously analyzed results, track changes over time, and generate reports based on historical data. Such an endpoint provides a clean separation of concerns by keeping data access logic on the server side while enabling rich user experiences on the client side.
 
