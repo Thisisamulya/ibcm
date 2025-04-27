@@ -306,26 +306,127 @@ A class diagram for an AI-driven inspection system of institutions would define 
 \begin{figure}[H]
     \centering
     \includegraphics[width=0.8\textwidth]{images/mermaid-ai-diagram-2025-04-27-113217.png}
+    \caption{Class Diagram for AI-Driven Inspection System}
+\end{figure}
+\subsection{Sequence Diagram}
+The sequence diagram below illustrates the process flow of the AI-driven inspection system. It shows the interactions between the Institution, Inspection System, Data Collection Module, Data Preprocessing Module, AI Analysis Module, and Human Inspector.The process starts with the Institution sending an inspection request to the Inspection System. The system initiates the inspection by triggering the Data Collection Module, which gathers relevant data from various sources such as databases, sensors, and reports. The collected data is then passed to the Data Preprocessing Module, where it is cleaned and prepared for analysis. Once preprocessed, the data is sent to the AI Analysis Module, which analyzes the information and identifies key findings. The results are forwarded to the Human Inspector for review. The human inspector may request additional data, prompting the system to loop back to data collection if needed. After the review, the human inspector finalizes the report, which is then compiled and submitted back to the institution by the Report Generation Module. Finally, the institution receives the report and takes necessary follow-up actions, completing the inspection process.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/sequence diagram.PNG}
     \caption{Sequence Diagram for AI-Driven Inspection System}
     \label{fig:sequence-diagram}
 \end{figure}
-\subsection{Sequence Diagram}
-The sequence diagram below illustrates the process flow of the AI-driven inspection system. It shows the interactions between the Institution, Inspection System, Data Collection Module, Data Preprocessing Module, AI Analysis Module, and Human Inspector.
-The AI-driven inspection process begins with initiating an inspection request, either manually or automatically. The system collects relevant data from various sources, including documents, reports, sensors, and IoT devices. This data is then preprocessed to ensure quality and consistency. AI models analyze the data, identifying patterns and potential issues, which leads to the generation of a preliminary report. A human inspector reviews the report to validate the findings and provide additional insights. If more data is needed, the process loops back to data collection; otherwise, a final report is compiled, combining AI and human inputs. This report is then shared with the institution for further action. The sequence diagram captures the dynamic interactions and flow of information between the components of the system, highlighting the collaboration between AI and human inspectors in enhancing inspection efficiency and accuracy.
-
 
 \subsection{Component Diagram}
+The component diagram below illustrates the high-level architecture of the construction progress monitoring system. It highlights the interaction between the main components, including the frontend, backend, database, and machine learning modules.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/component diagram.PNG}
+    \caption{Component Diagram for Construction Progress Monitoring System}
+    \label{fig:component-diagram}
+\end{figure}
+
+\textbf{Key Components:}
+\begin{itemize}
+    \item \textbf{Frontend:} Built using Next.js, the frontend provides a user-friendly interface for uploading images, viewing progress reports, and managing projects.
+    \item \textbf{Backend:} Developed with Flask, the backend handles API requests, processes images, and communicates with the database.
+    \item \textbf{Database:} MySQL is used to store user data, project details, and analysis results, ensuring data persistence and integrity.
+    \item \textbf{Machine Learning Module:} Includes SSIM for structural similarity analysis and YOLO for object detection, enabling automated progress tracking and safety compliance checks.
+    \item \textbf{Notification Service:} Sends alerts to users about progress updates, safety violations, or system errors.
+\end{itemize}
+
 \subsection{Activity Diagram}
+The activity diagram below illustrates the AI-driven inspection process, highlighting the flow of activities from initiating an inspection request to submitting the final report and incorporating feedback for continuous improvement.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/activity diagram.PNG}
+    \caption{Activity Diagram for AI-Driven Inspection Process}
+    \label{fig:activity-diagram}
+\end{figure}
+
+\textbf{Key Steps in the Process:}
+\begin{enumerate}
+    \item \textbf{Initiate Inspection:} The process begins with an inspection request, which can be initiated manually or automatically.
+    \item \textbf{Data Collection:} Relevant data is gathered from various sources, including documents, reports, sensors, and IoT devices.
+    \item \textbf{Data Preprocessing:} The collected data is cleaned and standardized to ensure quality and consistency.
+    \item \textbf{AI Analysis:} AI models analyze the preprocessed data to identify patterns, anomalies, and potential issues.
+\end{enumerate}
 
 \section{ER Diagram}
+The Entity-Relationship (ER) diagram below illustrates the database structure for the construction progress monitoring system. It highlights the relationships between key entities such as Users, Projects, Images, and Analysis Results.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/mermaid-ai-diagram-2025-04-27-132345.png}
+    \caption{ER Diagram for Construction Progress Monitoring System}
+    \label{fig:er-diagram}
+\end{figure}
+
+\textbf{Key Entities and Relationships:}
+\begin{itemize}
+    \item \textbf{Users:}
+    \begin{itemize}
+        \item Attributes: UserID (Primary Key), Name, Email, Username, PasswordHash, Role.
+        \item Relationships: Each user can manage multiple projects.
+    \end{itemize}
+    \item \textbf{Projects:}
+    \begin{itemize}
+        \item Attributes: ProjectID (Primary Key), ProjectName, Description, StartDate, EndDate, UserID (Foreign Key).
+        \item Relationships: Each project is associated with multiple images and analysis results.
+    \end{itemize}
+    \item \textbf{Images:}
+    \begin{itemize}
+        \item Attributes: ImageID (Primary Key), FilePath, UploadDate, ProjectID (Foreign Key).
+        \item Relationships: Each image is linked to a specific project and may be used in multiple analyses.
+    \end{itemize}
+    \item \textbf{Analysis Results:}
+    \begin{itemize}
+        \item Attributes: AnalysisID (Primary Key), SimilarityScore, ProgressPercentage, Timestamp, PreviousImageID (Foreign Key), CurrentImageID (Foreign Key), ProjectID (Foreign Key).
+        \item Relationships: Each analysis result references two images (previous and current) and is linked to a project.
+    \end{itemize}
+\end{itemize}
 
 \section{Data Flow Diagrams}
+The Data Flow Diagram (DFD) illustrates the flow of data within the construction progress monitoring system. It shows how data is collected, processed, and stored, as well as the interactions between different components of the system. The DFD is divided into three levels, each providing a more detailed view of the system's data flow.
 \subsection{0-Level Diagram}
+A Level 0 Data Flow Diagram (DFD), also known as a Context Diagram, provides a high-level overview of a system by representing it as a single process. It shows how the system interacts with external entities and handles data flows, but does not detail internal processes.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/level 0.png} % Replace with the actual path to the image
+    \caption{Level 0 Data Flow Diagram (Context Diagram)}
+    \label{fig:level-0-dfd}
+\end{figure}
+
+Purpose:
+A Zero-Level Data Flow Diagram (DFD), or context diagram, for an AI-driven inspection system of institutions provides a high-level overview of the system. It shows the system as a single process and its interactions with external entities. The Inspector interacts with the system to initiate inspections, review results, and take action based on the findings. Institutional Data Sources, such as building blueprints and historical maintenance records, provide essential data to the system. IoT Devices/Sensors, like cameras and environmental sensors, supply real-time data that the system uses for analysis.
 \subsection{1-Level Diagram}
+A I-level Data Flow Diagram (DFD) for an AI-driven inspection system of institutions begins with external entities such as the Inspector (user) and Institutional Data Sources (e.g., building blueprints, historical reports). These entities provide input data to the Data Collection, Preprocessing process, which gathers data from IoT devices, sensors, and cameras, then cleans and prepares it for analysis. The preprocessed data is sent to the AI Model Training, Prediction process, which uses machine learning models to generate predictions or anomaly detections. These results, along with raw data and processed insights, are stored in the Data Storage Management repository for future use. The Results Reporting process generates actionable reports or alerts based on the predictions and data analysis, which are presented back to the Inspector for review. This process flow creates a feedback loop that enhances the inspection process and supports real- time decision-making.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/level 2.png} % Replace with the actual path to the image
+    \caption{Level 0 Data Flow Diagram (Context Diagram)}
+    \label{fig:level-1-dfd}
+\end{figure}
 \subsection{2-Level Diagram}
+\subsection{Level 2 Data Flow Diagram (DFD)}
+A Level 2 Data Flow Diagram (DFD) for an AI-driven inspection system of institutions provides a more detailed view of the processes within the system. It breaks down the core AI-Driven Inspection System from the Zero-Level DFD into its main components and illustrates how data flows through each.
 
+\begin{itemize}
+    \item \textbf{Data Collection \& Preprocessing:} Data is gathered from external sources like IoT Devices/Sensors and Institutional Data Sources. This data is then cleaned, normalized, and prepared for further analysis.
+    \item \textbf{AI Model Training \& Prediction:} The processed data is sent to AI Model Training \& Prediction, where machine learning models, such as Convolutional Neural Networks (CNNs), are trained on historical data. The trained models are used to analyze the preprocessed data and generate predictions or anomaly detections.
+\end{itemize}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{images/level 1.png} % Replace with the actual path to the image
+    \caption{Level 0 Data Flow Diagram (Context Diagram)}
+    \label{fig:level-2-dfd}
+\end{figure}
 \section{Summary}
-
+The design phase of the construction progress monitoring system outlines a comprehensive framework for automating and enhancing project tracking. By leveraging UML diagrams, such as use case, class, sequence, component, and activity diagrams, the system's architecture and workflows are clearly defined. The ER diagram and data flow diagrams provide a detailed view of the database structure and data interactions, ensuring efficient storage and retrieval of analysis results. The proposed design emphasizes modularity, scalability, and user-centric features, laying a strong foundation for implementation and future enhancements.
 % ...existing code...
 
 
@@ -476,7 +577,6 @@ The following screenshots illustrate the outputs generated by the system:
     \item \textbf{Historical Data View:} A timeline view of past analyses, enabling users to track progress over time.
     \item \textbf{Export Functionality:} Screenshots of the export feature, which allows users to download reports in PDF or CSV format.
 \end{itemize}
-Figures \ref{fig:login_page}, \ref{fig:dashboard}, \ref{fig:error_handling}, and \ref{fig:historical_data} showcase these outputs.
 
 \section{Performance Analysis}
 The system's performance was evaluated based on the following metrics:
@@ -487,7 +587,7 @@ The system's performance was evaluated based on the following metrics:
     \item \textbf{Resource Utilization:} The system maintained low CPU and memory usage during peak loads, ensuring smooth operation.
     \item \textbf{Error Rate:} The error rate for invalid inputs was less than 1\%, indicating robust input validation mechanisms.
 \end{itemize}
-Table \ref{tab:performance_metrics} summarizes the key performance metrics, and Figure \ref{fig:performance_chart} visualizes the scalability results.
+
 
 \section{Comparisons (if applicable)}
 The proposed system was compared with existing methods:
@@ -498,6 +598,24 @@ The proposed system was compared with existing methods:
     \item \textbf{User Feedback:} Surveys from end-users indicated a 90\% satisfaction rate due to the system's ease of use and reliability.
     \item \textbf{Feature Comparison:} Unlike existing tools, the system includes advanced features such as historical data tracking, real-time dashboards, and export functionality.
 \end{itemize}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|p{4cm}|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Feature} & \textbf{Existing System} & \textbf{Proposed System} \\ \hline
+        \textbf{Automation} & Manual inspections and progress tracking. & Fully automated using machine learning and image analysis. \\ \hline
+        \textbf{Accuracy} & Subjective and prone to human error. & High accuracy with ML algorithms (10\% improvement). \\ \hline
+        \textbf{Real-Time Monitoring} & Limited or no real-time capabilities. & Provides near real-time progress updates. \\ \hline
+        \textbf{Cost Efficiency} & High costs due to frequent site visits and manual labor. & Reduced costs with automated processes and lightweight tools. \\ \hline
+        \textbf{Data Tracking} & No historical data tracking. & Tracks and compares historical data for better insights. \\ \hline
+        \textbf{User Satisfaction} & Limited usability and reliability. & 90\% satisfaction rate due to ease of use and reliability. \\ \hline
+        \textbf{Scalability} & Difficult to scale for large projects. & Scalable for multiple projects and users. \\ \hline
+    \end{tabular}
+    \caption{Comparison of Existing and Proposed Systems}
+    \label{tab:comparison-existing-proposed}
+\end{table}
+
 These comparisons highlight the advantages of the proposed approach in terms of speed, accuracy, cost-effectiveness, and user satisfaction.
 
 \section{Discussion of Results}
@@ -521,8 +639,6 @@ The findings align with existing literature on the benefits of automation in con
 \section{Conclusion}
 The implementation of the construction progress monitoring system demonstrates a successful integration of computer vision, backend processing, persistent storage, and frontend visualization to automate and enhance the way construction sites are tracked and analyzed. By leveraging SSIM-based image comparison and YOLO-based object detection, the system provides quantitative insights into construction progress, enabling stakeholders to assess developments objectively. The incorporation of a database ensures that every analysis is stored securely and can be retrieved at any time, forming a historical log of project milestones and performance.
 
-Through seamless communication between the frontend interface and backend APIs, users are able to upload images, generate reports, and visualize progress data without manual calculations or field visits. This not only improves efficiency but also introduces a level of transparency and consistency in project oversight. The modular design also lays a strong foundation for future enhancements, such as integrating real-time camera feeds, adding user authentication, and deploying the application in cloud environments for large-scale adoption.
-
 In conclusion, the system proves to be a practical and scalable solution for modern construction management, combining AI-driven analysis with robust data handling to support informed decision-making and streamlined reporting throughout the lifecycle of a construction project.
 
 \section{Limitations}
@@ -531,10 +647,8 @@ While the construction progress monitoring system demonstrates significant poten
     \item \textbf{Scalability:} The current implementation uses SQLite, which is suitable for local development but may not scale effectively for multi-user environments or large datasets. Transitioning to a more robust database like PostgreSQL or MySQL is recommended for production use.
     \item \textbf{Image Format Support:} The system supports a limited number of image formats. Expanding compatibility to include additional formats would improve usability for diverse user needs.
     \item \textbf{Processing Time for Large Images:} Slightly increased processing times were observed for very large image files, which could impact real-time analysis in high-demand scenarios.
-    \item \textbf{Localization:} The system currently lacks multi-language support, which limits its accessibility for international users.
     \item \textbf{Object Detection Scope:} While the system uses SSIM for structural comparison, it does not yet incorporate advanced object detection for identifying specific elements like scaffolding or materials, which could provide more detailed insights.
     \item \textbf{Real-Time Integration:} The system does not currently support real-time camera feeds, which could enhance its utility for live monitoring of construction sites.
-    \item \textbf{User Authentication:} The absence of user authentication mechanisms limits the system's security and restricts its deployment in environments requiring controlled access.
 \end{itemize}
 
 \section{Future Enhancements}
@@ -546,10 +660,8 @@ To further improve the construction progress monitoring system and address its l
     \item \textbf{Advanced Object Detection:} Incorporate object detection algorithms, such as YOLO or Faster R-CNN, to identify specific elements like scaffolding, materials, or machinery, offering more detailed insights into construction activities.
     \item \textbf{Multi-Language Support:} Implement localization features to make the system accessible to international users by supporting multiple languages.
     \item \textbf{User Authentication and Role Management:} Introduce secure user authentication and role-based access control to enhance security and allow for controlled access to system features.
-    \item \textbf{Cloud Deployment:} Deploy the system on cloud platforms like AWS or Azure to enable scalability, high availability, and remote access for distributed teams.
-    \item \textbf{Mobile Application Integration:} Develop a mobile application to allow users to upload images, view progress, and generate reports directly from their smartphones or tablets.
-    \item \textbf{Automated Reporting:} Add functionality to schedule and generate automated progress reports, reducing manual effort and ensuring timely updates for stakeholders.
-    \item \textbf{Integration with Project Management Tools:} Enable integration with popular project management tools like Microsoft Project or Jira to streamline workflows and improve collaboration.
+    
+    
 \end{itemize}
 
 % --- References / Bibliography ---
@@ -602,11 +714,6 @@ To further improve the construction progress monitoring system and address its l
     OpenCV. (n.d.). 
     \textit{OpenCV Documentation}. 
     Retrieved October 1, 2023, from \url{https://docs.opencv.org/}
-
-    \bibitem{AWSCloud}
-    Amazon Web Services. (n.d.). 
-    \textit{AWS Cloud Solutions}. 
-    Retrieved October 1, 2023, from \url{https://aws.amazon.com/}
 
     \bibitem{ConstructionAI2022}
     Smith, J., \& Doe, R. (2022). 
